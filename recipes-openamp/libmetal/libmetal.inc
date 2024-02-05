@@ -41,15 +41,11 @@ LIBMETAL_MACHINE ?= "${@get_cmake_machine(d.getVar('TARGET_OS'), d.getVar('TUNE_
 
 PACKAGE_ARCH = "${MACHINE_ARCH}"
 
-OPENAMP_SOC = "${SOC_FAMILY}"
-OPENAMP_SOC:versal-net = "versal"
-
 EXTRA_OECMAKE = ' \
 	-DLIB_INSTALL_DIR=${libdir} \
 	-DLIBEXEC_INSTALL_DIR=${libexecdir} \
 	-DMACHINE=${LIBMETAL_MACHINE} \
 	-DWITH_EXAMPLES=ON \
-	-DSOC_FAMILY="${OPENAMP_SOC}" \
 	'
 
 ALLOW_EMPTY:${PN}-demos = "1"
